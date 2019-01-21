@@ -1,0 +1,662 @@
+{% load static %}
+<html lang="en">
+
+<!-- Mirrored from incognitothemes.com/torneo/home-classic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Dec 2018 06:48:11 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Designsninja">
+<!-- description -->
+<meta name="description" content="Torneo is creative agency, corporate, simple and clean template, Based on Bootstrap responsive multipurpose agency and portfolio HTML5 template with 28 unique home page demos">
+<!-- keywords -->
+<meta name="keywords" content="classic, revolution slider, business, particles, portfolio, one page, bootstrap responsive, start-up, ui/ux, html5, css3, studio, branding, creative design, multipurpose, parallax, personal, masonry, grid, coming soon, carousel, career">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+
+<link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+<!-- Core Style Sheets -->
+<link rel="stylesheet" href="{% static 'assets/css/master.css' %}">
+<!-- Responsive Style Sheets -->
+<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+<!-- Revolution Style Sheets -->
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/navigation.css' %}">
+
+</head>
+<body>
+
+<!--== Loader Start ==-->
+<!--== Loader End ==-->
+
+<!--== Wrapper Start ==-->
+<div class="wrapper">
+
+  <!--== Header Start ==-->
+  <nav class="navbar navbar-default navbar-fixed navbar white bootsnav on no-full no-border">
+  	<!--== Start Top Search ==-->
+    <div class="fullscreen-search-overlay" id="search-overlay"> <a href="#" class="fullscreen-close" id="fullscreen-close-button"><i class="icofont icofont-close"></i></a>
+      <div id="fullscreen-search-wrapper">
+        <form method="get" id="fullscreen-searchform">
+          <input type="text" value="" placeholder="Type and hit Enter..." id="fullscreen-search-input" class="search-bar-top">
+          <i class="fullscreen-search-icon icofont icofont-search">
+          <input value="" type="submit">
+          </i>
+        </form>
+      </div>
+    </div>
+    <!--== End Top Search ==-->
+    <div class="container">
+      <!--== Start Atribute Navigation ==-->
+      <div class="attr-nav hidden-xs sm-display-none">
+        <ul>
+        {% if user.is_authenticated %}
+            {% if user.is_staff %}
+            <li class="dropdown"> <a href="{% url 'home' %}" class="dropdown-toggle btn btn-xs btn-dark-outline btn-circle margin-left-auto margin-right-auto display-table-sm" data-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                <li><a href="{% url 'noticedetails' %}">View Noticeboard</a></li>
+                <li><a href="{% url 'noticep' %}">Add Events</a></li>
+              </ul>
+            </li>
+             <li><a href="{% url 'logout' %}" class="btn btn-xs btn-danger btn-circle margin-left-auto margin-right-auto display-table-sm">LOGOUT</a></li>
+            {% else %}
+            <li class="dropdown"> <a href="#" class="dropdown-toggle btn btn-xs btn-dark-outline btn-square margin-left-auto margin-right-auto display-table-sm" data-toggle="dropdown">Home</a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                <li><a href="{% url 'noticedetails' %}">View Noticeboard</a></li>
+                
+              </ul>
+            </li>
+            <li><a href="{% url 'logout' %}" class="btn btn-xs btn-danger btn-circle margin-left-auto margin-right-auto display-table-sm">LOGOUT</a></li>
+            
+            {% endif %}
+        {% else %}
+            <li><a href="{% url 'login' %}" class="btn btn-xs btn-danger btn-circle margin-left-auto margin-right-auto display-table-sm">LOGIN</a></li>
+            <li><a href="{% url 'signup' %}" class="btn btn-xs btn-danger btn-circle margin-left-auto margin-right-auto display-table-sm">SIGNUP</a></li>
+          
+        {% endif %}
+        
+        </ul>
+      </div>
+      <!--== End Atribute Navigation ==-->
+
+      <!--== Start Header Navigation ==-->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="tr-icon ion-android-menu"></i> </button>
+        <div class="logo"> <a href="{% url 'home' %}"> Online Notice Board </a> 
+        
+        </div>
+      </div>
+      <!--== End Header Navigation ==-->
+
+      <!--== Collect the nav links, forms, and other content for toggling ==-->
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        
+      </div>
+      <!--== /.navbar-collapse ==-->
+    </div>
+    <!-- Start Side Menu -->
+     <!-- End Side Menu -->
+  </nav>
+  <!--== Header End ==-->
+  <br>
+<br>
+
+<br>
+
+
+{% block content %}
+
+
+  <!--== Our Services Start ==-->
+  <section>
+    <div class="container">
+        <div class="row service-box-style-03">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="flipper">
+              <div class="text-center mb-50 main-box">
+                <div class="box-front height-300px white-bg">
+                  <div class="content-wrap">
+                    <i class="icofont icofont-headphone-alt font-40px dark-color"></i>
+                    <h4 class="font-600">Marketing</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+                <div class="box-back height-300px dark-bg">
+                  <div class="content-wrap white-color">
+                    <i class="icofont icofont-headphone-alt font-40px"></i>
+                    <h4 class="font-600">Marketing</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="flipper">
+              <div class="text-center mb-50 main-box">
+                <div class="box-front height-300px white-bg">
+                  <div class="content-wrap">
+                    <i class="icofont icofont-globe-alt font-40px dark-color"></i>
+                    <h4 class="font-600">Development</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+                <div class="box-back height-300px dark-bg">
+                  <div class="content-wrap white-color">
+                    <i class="icofont icofont-globe-alt font-40px"></i>
+                    <h4 class="font-600">Development</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="flipper">
+              <div class="text-center mb-50 main-box">
+                <div class="box-front height-300px white-bg">
+                  <div class="content-wrap">
+                    <i class="icofont icofont-magic font-40px dark-color"></i>
+                    <h4 class="font-600">Design</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+                <div class="box-back height-300px dark-bg">
+                  <div class="content-wrap white-color">
+                    <i class="icofont icofont-magic font-40px"></i>
+                    <h4 class="font-600">Design</h4>
+                    <p class="font-400 mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+  <!--== Our Services End ==-->
+
+  <!--== Portfolio Start ==-->
+  <section class="white-bg pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div id="portfolio-gallery-filter" class="cbp-l-filters-alignCenter text-sm-center mb-100">
+              <div data-filter="*" class="cbp-filter-item-active cbp-filter-item dark">
+                  All
+              </div>
+              <div data-filter=".branding" class="cbp-filter-item">
+                  Branding
+              </div>
+              <div data-filter=".print" class="cbp-filter-item">
+                  Print Design
+              </div>
+              <div data-filter=".web-design" class="cbp-filter-item">
+                  Web Design
+              </div>
+              <div data-filter=".advertising" class="cbp-filter-item">
+                  Advertising
+              </div>
+              <div data-filter=".photography" class="cbp-filter-item">
+                  Photography
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  	<div class="container-fluid">
+    	<div class="row">
+        <div class="col-md-12">
+          <div id="portfolio-gallery" class="cbp">
+                <div class="cbp-item branding col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/55.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Daniel Barkle</h4>
+                          <p class="default-color">Visual Identity</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item print web-design col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/56.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Versions Packaging</h4>
+                          <p class="default-color">Art Direction</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item print advertising col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/57.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Juicy Redruby</h4>
+                          <p class="default-color">Print Media</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item branding photography col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/58.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Fruit Up</h4>
+                          <p class="default-color">Web Design</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item branding web-design col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/59.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Clini Cloud</h4>
+                          <p class="default-color">Typography</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item print advertising col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/60.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Ovik Luxury</h4>
+                          <p class="default-color">Branding</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item branding photography col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/61.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Loeffler Randall</h4>
+                          <p class="default-color">User Interface</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="cbp-item print web-design col-md-3 col-sm-3 with-spacing">
+                  <figure class="imghvr-blur text-center">
+                    <img src="{% static 'assets/images/portfolio/grid/62.jpg' %}" alt="your-image">
+                    <figcaption class="dark-bg">
+                      <div class="center-layout">
+                        <div class="v-align-middle">
+                          <h4 class="mb-0 mt-10 white-color">Sofia Palmero</h4>
+                          <p class="default-color">Identity</p>
+                        </div>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+            	</div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!--== Portfolio End ==-->
+
+  <!--== Counter Start ==-->
+  <section class="white-bg pt-80 pb-80">
+    <div class="container">
+      <div class="row counter-type-3">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counter-wrap wow fadeInRight" data-wow-delay="0.1s">
+            <div class="pull-left">
+            	<i class="icon-paintbrush default-color font-40px"></i>
+            </div>
+            <div class="pull-left pl-20">
+            	<h2><span class="counter font-600">3521</span></h2>
+				      <div class="line default-bg"></div>
+            	<span class="dark-color text-uppercase">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counter-wrap wow fadeInRight" data-wow-delay="0.2s">
+           	 <div class="pull-left">
+           	 	<i class="icon-speedometer default-color font-40px"></i>
+			 </div>
+           	 <div class="pull-left pl-20">
+              	<h2><span class="counter font-600">974</span></h2>
+              	<div class="line default-bg"></div>
+              	<h3 class="dark-color text-uppercase">Cups of Coffee</h3>
+             </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counter-wrap wow fadeInRight" data-wow-delay="0.3s">
+          	 <div class="pull-left">
+           	 	<i class="icon-genius default-color font-40px"></i>
+           	 </div>
+           	 <div class="pull-left pl-20">
+        				<h2><span class="counter font-600">634</span></h2>
+        				<div class="line default-bg"></div>
+        				<h3 class="dark-color text-uppercase">Project Delivered</h3>
+             </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="counter-wrap wow fadeInRight" data-wow-delay="0.4s">
+            <div class="pull-left">
+            	<i class="icon-strategy default-color font-40px"></i>
+            </div>
+            <div class="pull-left pl-20">
+      				<h2><span class="counter font-600">449</span></h2>
+      				<div class="line default-bg"></div>
+      				<h3 class="dark-color text-uppercase">Awards Won</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--== Counter End ==-->
+
+  <!--== Our Process Start ==-->
+  <section class="dark-bg">
+    <div class="container">
+        <div class="row our-process-style-02">
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight line xs-mb-30" data-wow-delay="0.1s">
+            <div class="icon-wrap white-bg">
+              <div class="icon">
+                <i class="icon-tools default-color font-30px"></i>
+              </div>
+            </div>
+            <div class="text-center white-color">
+              <h4 class="font-500">Design</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Proin ut tempor nisl sit amet tincidunt orci.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight line xs-mb-30" data-wow-delay="0.2s">
+            <div class="icon-wrap white-bg">
+              <div class="icon">
+                <i class="icon-globe default-color font-30px"></i>
+              </div>
+            </div>
+            <div class="text-center white-color">
+              <h4 class="font-500">Development</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Proin ut tempor nisl sit amet tincidunt orci.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight line xs-mb-30" data-wow-delay="0.3s">
+            <div class="icon-wrap white-bg">
+              <div class="icon">
+                <i class="icon-mobile default-color font-30px"></i>
+              </div>
+            </div>
+            <div class="text-center white-color">
+              <h4 class="font-500">Testing</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Proin ut tempor nisl sit amet tincidunt orci.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInRight line xs-mb-30" data-wow-delay="0.4s">
+            <div class="icon-wrap white-bg">
+              <div class="icon">
+                <i class="icon-browser default-color font-30px"></i>
+              </div>
+            </div>
+            <div class="text-center white-color">
+              <h4 class="font-500">Live</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Proin ut tempor nisl sit amet tincidunt orci.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!--== Our Process End ==-->
+
+  <!--== Clients Start ==-->
+  <section class="white-bg">
+    <div class="container">
+      <div class="row">
+        <div class="client-slider slick">
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/1.png' %}" alt="01"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/2.png' %}" alt="02"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/3.png' %}" alt="03"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/4.png' %}" alt="04"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/5.png' %}" alt="05"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/6.png' %}" alt="06"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/7.png' %}" alt="07"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/8.png' %}" alt="08"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/9.png' %}" alt="09"/> </div>
+          <div class="client-logo"> <img class="img-responsive" src="{% static 'assets/images/clients/10.png' %}" alt="10"/> </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--== Clients End ==-->
+
+  <!--== Testimonails Start ==-->
+  <section>
+   <div class="overlay-bg"></div>
+    <div class="container">
+        <div class="row slick testimonial-style-2">
+         	<!--== Slide ==-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+      			<div class="testimonial-item">
+      				<div class="testimonial-content">
+      					<div class="col-md-3 text-center col-sm-3 col-xs-12 display-table">
+      						<div class="v-align-middle">
+      							<img class="img-responsive img-circle" src="assets/images/team/avatar-5.jpg" alt="avatar-1"/>
+      						</div>
+      				  	</div>
+      				  	<div class="col-md-8 text-left col-sm-8 col-xs-12">
+      				  		<h4 class="white-color mt-0 mb-0 text-uppercase font-20px xs-text-center sm-text-center">James Lange</h4>
+      						<p class="default-color xs-text-center sm-text-center">Director of Media</p>
+      						<h5 class="mt-10 xs-text-center sm-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales nec nulla ac aliquet. Duis vel nunc eget.</h5>
+      				  	</div>
+      				</div>
+      			</div>
+          </div>
+          <!--== Slide ==-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+      			<div class="testimonial-item">
+      				<div class="testimonial-content">
+      					<div class="col-md-3 text-center col-sm-3 col-xs-12 display-table">
+      						<div class="v-align-middle">
+      							<img class="img-responsive img-circle" src="{% static 'assets/images/team/avatar-6.jpg' %}" alt="avatar-1"/>
+      						</div>
+      				  	</div>
+      				  	<div class="col-md-8 text-left col-sm-8 col-xs-12">
+      				  		<h4 class="white-color mt-0 mb-0 text-uppercase font-20px xs-text-center sm-text-center">Rachel Cory</h4>
+      						<p class="default-color xs-text-center sm-text-center">Photography</p>
+      						<h5 class="mt-10 xs-text-center sm-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales nec nulla ac aliquet. Duis vel nunc eget.</h5>
+      				  	</div>
+      				</div>
+      			</div>
+          </div>
+          <!--== Slide ==-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+      			<div class="testimonial-item">
+      				<div class="testimonial-content">
+      					<div class="col-md-3 text-center col-sm-3 col-xs-12 display-table">
+      						<div class="v-align-middle">
+      							<img class="img-responsive img-circle" src="{% static 'assets/images/team/avatar-7.jpg' %}" alt="avatar-1"/>
+      						</div>
+      				  	</div>
+      				  	<div class="col-md-8 text-left col-sm-8 col-xs-12">
+      				  		<h4 class="white-color mt-0 mb-0 text-uppercase font-20px xs-text-center sm-text-center">Thomas Peter</h4>
+      						<p class="default-color xs-text-center sm-text-center">PHP Developer</p>
+      						<h5 class="mt-10 xs-text-center sm-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales nec nulla ac aliquet. Duis vel nunc eget.</h5>
+      				  	</div>
+      				</div>
+      			</div>
+          </div>
+          <!--== Slide ==-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+      			<div class="testimonial-item">
+      				<div class="testimonial-content">
+      					<div class="col-md-3 text-center col-sm-3 col-xs-12 display-table">
+      						<div class="v-align-middle">
+      							<img class="img-responsive img-circle" src="{% static 'assets/images/team/avatar-8.jpg' %}" alt="avatar-1"/>
+      						</div>
+      				  	</div>
+      				  	<div class="col-md-8 text-left col-sm-8 col-xs-12">
+      				  		<h4 class="white-color mt-0 mb-0 text-uppercase font-20px xs-text-center sm-text-center">Isla Mack</h4>
+      						<p class="default-color xs-text-center sm-text-center">Front-end Ninja</p>
+      						<h5 class="mt-10 xs-text-center sm-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales nec nulla ac aliquet. Duis vel nunc eget.</h5>
+      				  	</div>
+      				</div>
+      			</div>
+          </div>
+        </div>
+    </div>
+    <video autoplay="" muted="" loop="" controls="" class="html5-video">
+      <source src="{% static 'assets/videos/explore.mp4' %}" type="video/mp4">
+      <source src="{% static 'assets/videos/explore.webm' %}" type="video/webm">
+    </video>
+  </section>
+  <!--== Testimonails End ==-->
+
+  <!--== Blog Posts Start ==-->
+  <section class="grey-bg">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="post">
+              <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-01.jpg' %}" alt=""/> </div>
+              <div class="post-info all-padding-40">
+                <h6>January 15, 2018</h6>
+                <h3><a href="blog-grid.html">How These Different Book Covers Reflect the Design</a></h3>
+                <hr>
+                <p class="mt-10"> <span> <a class="extras-wrap" href="#"><i class="icofont icofont-chat"></i><span>5 Comments</span></a> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>5 Minutes</span></span> </span> </p>
+                <a class="readmore" href="#"><span>Read More</span></a> </div>
+            </div>
+          </div>
+          <!--== Post End ==-->
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="post">
+              <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-02.jpg' %}" alt=""/> </div>
+              <div class="post-info all-padding-40">
+                <h6>April 19, 2014</h6>
+                <h3><a href="blog-grid.html">8 Colorful Toys Designed to Spark the Imagination</a></h3>
+                <hr>
+                <p class="mt-10"> <span> <a class="extras-wrap" href="#"><i class="icofont icofont-chat"></i><span>5 Comments</span></a> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>8 Minutes</span></span> </span> </p>
+                <a class="readmore" href="#"><span>Read More</span></a> </div>
+            </div>
+          </div>
+          <!--== Post End ==-->
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="post">
+              <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-03.jpg' %}" alt=""/> </div>
+              <div class="post-info all-padding-40">
+                <h6>Febuary 13, 2018</h6>
+                <h3><a href="blog-grid.html">User Experience Design is one of the most rapidly developing</a></h3>
+                <hr>
+                <p class="mt-10"> <span> <a class="extras-wrap" href="#"><i class="icofont icofont-chat"></i><span>5 Comments</span></a> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>Just Now</span></span> </span> </p>
+                <a class="readmore" href="#"><span>Read More</span></a> </div>
+            </div>
+          </div>
+          <!--== Post End ==-->
+        </div>
+    </div>
+
+  </section>
+  <!--== Blog Posts End ==-->
+
+  <!--== Call to Action Start ==-->
+  <section class="parallax-bg fixed-bg pt-80 pb-80" data-parallax-bg-image="{% static 'assets/images/background/parallax-bg-6.jpg' %}" data-parallax-speed="0.8" data-parallax-direction="up">
+  	<div class="parallax-overlay"></div>
+    <div class="container">
+    	  <div class="row">
+            <div class="col-md-12 col-sm-12 centerize-col text-center white-color relative">
+              <span class="sm-mb-30 font-20px display-inline-block mr-30">No Coding required for build your page. Torneo delivers everything.</span>
+              <a class="btn btn-md btn-light-outline btn-square">Purchase Now for $14</a>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!--== Call to Action End ==-->
+{% endblock %}
+
+
+  <!--== Footer Start ==-->
+  <footer class="footer dark-block">
+    
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="copy-right text-left">© 2018 <i class="icon icofont icofont-heart-alt"></i>  All rights reserved</div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <ul class="social-media">
+              <li><a href="#" class="icofont icofont-social-facebook"></a></li>
+      			  <li><a href="#" class="icofont icofont-social-twitter"></a></li>
+      			  <li><a href="#" class="icofont icofont-social-behance"></a></li>
+      			  <li><a href="#" class="icofont icofont-social-dribble"></a></li>
+           	  <li><a href="#" class="icofont icofont-social-linkedin"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--== Footer End ==-->
+
+  <!--== Go to Top  ==-->
+  <a href="javascript:" id="return-to-top"><i class="icofont icofont-arrow-up"></i></a>
+  <!--== Go to Top End ==-->
+
+</div>
+<!--== Wrapper End ==-->
+
+<!--== Javascript Plugins ==-->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/smoothscroll.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/master.js' %}"></script>
+
+<!-- Revolution js Files -->
+<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.actions.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.kenburn.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.layeranimation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.migration.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.navigation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.parallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.slideanims.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'revolution/js/revolution.extension.video.min.js' %}"></script>
+<!--== Javascript Plugins End ==-->
+
+</body>
+
+<!-- Mirrored from incognitothemes.com/torneo/home-classic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Dec 2018 06:51:51 GMT -->
+</html>

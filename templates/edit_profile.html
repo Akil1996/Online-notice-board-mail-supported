@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center">Edit Profile</h1>
+
+    <br>
+    <div class="container">
+      <div class="checkout-form">
+        <div class="row">
+          <div class="col-md-6 mb-20 col-xs-12 col-sm-6">
+            <div class="mb-20">
+              <h5 class="upper-case">Profile Details</h5>
+            </div>
+            <form method="POST" action="{% url 'edit_profile' %}">
+{% csrf_token %}
+{% if form.errors %}
+    
+
+<p>Your form has errors</p>
+    {% for field in form %}
+        {% if field.errors %}
+            {{ field.errors }}
+
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{{form.as_p}}
+
+<input type="submit" value="Edit Profile" class="btn btn-sm btn-dark-outline margin-left-auto margin-right-auto display-table-sm">
+</form>
+   
+</div>
+<div class="col-md-6 col-xs-12 col-sm-6">
+  <div class="mb-20">
+    <h5 class="upper-case">Other Info</h5>
+  </div>
+ 
+
+ 
+</div>
+</div>
+</div>
+
+</div>
+<br>
+
+{% endblock  %}
